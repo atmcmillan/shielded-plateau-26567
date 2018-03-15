@@ -28,7 +28,7 @@ module OmniAuth
 
       option :setup, proc { |env|
         request = Rack::Request.new(env)
-        puts "SITE REQUEST: "
+        puts "SITE REQUEST:"
         puts request.inspect
         env['omniauth.strategy'].options[:client_options][:site] = "https://#{request.GET['shop']}"
       }
