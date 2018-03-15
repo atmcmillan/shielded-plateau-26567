@@ -28,7 +28,7 @@ module OmniAuth
 
       option :setup, proc { |env|
         request = Rack::Request.new(env)
-        puts "SITE REQUEST:"
+        puts "REQUEST:"
         puts request.inspect
         env['omniauth.strategy'].options[:client_options][:site] = "https://#{request.GET['shop']}"
       }
@@ -46,6 +46,8 @@ module OmniAuth
       end
 
       def valid_site?
+        puts "REQUEST (valid_site):"
+        puts request.inspect
         puts "SITE NAME: #{options[:client_options][:site]}"
         !!(/\A(https|http)\:\/\/[a-zA-Z0-9][a-zA-Z0-9\-]*\.#{Regexp.quote(options[:myshopify_domain])}[\/]?\z/ =~ options[:client_options][:site])
       end
