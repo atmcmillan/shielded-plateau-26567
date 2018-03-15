@@ -47,6 +47,7 @@ module OmniAuth
 
       def valid_site?
         puts "REQUEST (valid_site):"
+        puts request.GET['shop']
         puts request.GET.inspect
         puts "SITE NAME: #{options[:client_options][:site]}"
         !!(/\A(https|http)\:\/\/[a-zA-Z0-9][a-zA-Z0-9\-]*\.#{Regexp.quote(options[:myshopify_domain])}[\/]?\z/ =~ options[:client_options][:site])
