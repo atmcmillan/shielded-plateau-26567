@@ -4,14 +4,6 @@ PATH
     omniauth-shopify-oauth2 (1.2.1)
       omniauth-oauth2 (~> 1.5.0)
 
-PATH
-  remote: vendor/gems/shopify_app-8.2.5
-  specs:
-    shopify_app (8.2.5)
-      omniauth-shopify-oauth2 (~> 1.2.0)
-      rails (>= 5.0.0)
-      shopify_api (>= 4.3.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -181,6 +173,10 @@ GEM
     shopify_api (4.11.0)
       activeresource (>= 3.0.0)
       rack
+    shopify_app (8.2.5)
+      omniauth-shopify-oauth2 (~> 1.2.0)
+      rails (>= 5.0.0)
+      shopify_api (>= 4.3.5)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -229,7 +225,7 @@ DEPENDENCIES
   rails (~> 5.1.5)
   sass-rails (~> 5.0)
   selenium-webdriver
-  shopify_app (= 8.2.5)!
+  shopify_app (= 8.2.5)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

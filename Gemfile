@@ -53,6 +53,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'shopify_app', '8.2.5', :path => "vendor/gems/shopify_app-8.2.5"
+gem 'shopify_app', '8.2.5'
 gem 'omniauth-shopify-oauth2', :path => "vendor/gems/omniauth-shopify-oauth2-1.2.1"
 
