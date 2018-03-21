@@ -2,7 +2,7 @@ module ShopifyApp
   class SessionsController < ActionController::Base
     include ShopifyApp::LoginProtection
     layout false, only: :new
-    after_action only: :new do |controller|
+    after_action only: [:new, :create] do |controller|
       controller.response.headers.except!('X-Frame-Options')
     end
 
@@ -39,7 +39,7 @@ module ShopifyApp
     def authenticate
       if sanitized_shop_name.present?
         omniauth_oauth_url = "#{main_app.root_path}auth/shopify?shop=#{sanitized_shop_name}"
-        omniauth_oauth_url += "&origin=#{CGI::escape origin}" if origin.present?
+#        omniauth_oauth_url += "&origin=#{CGI::escape origin}" if origin.present?
         session['shopify.omniauth_params'] = { shop: sanitized_shop_name }
         fullpage_redirect_to omniauth_oauth_url
       else
